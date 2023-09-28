@@ -4,6 +4,8 @@
  */
 package car.hire;
 
+import car.hire.view.LayoutView;
+
 /**
  *
  * @author PCView
@@ -14,8 +16,8 @@ public class CarHire {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hello2");
+       
+          new LayoutView().setVisible(true);
     }
     
 }

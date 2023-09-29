@@ -132,7 +132,7 @@ public class LayoutView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageCategoriesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCategoriesButtonActionPerformed
-        loadCategoryPanel();
+        loadCarCategoryPanel();
     }//GEN-LAST:event_manageCategoriesButtonActionPerformed
 
     /**
@@ -178,4 +178,14 @@ public class LayoutView extends javax.swing.JFrame {
     private javax.swing.JButton manageCategoriesButton;
     private javax.swing.JPanel sideNavPanel;
     // End of variables declaration//GEN-END:variables
+
+    private void loadCarCategoryPanel() {
+        bodyPanel.removeAll();
+        CarCategoryPanel carCategoryPanel = new CarCategoryPanel();
+
+        carCategoryPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(carCategoryPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
 }

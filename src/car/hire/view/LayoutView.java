@@ -31,6 +31,7 @@ public class LayoutView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         sideNavPanel = new javax.swing.JPanel();
         manageCategoriesButton = new javax.swing.JButton();
+        manageCarButton = new javax.swing.JButton();
         bodyPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,13 +69,23 @@ public class LayoutView extends javax.swing.JFrame {
             }
         });
 
+        manageCarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        manageCarButton.setText("Car Manage");
+        manageCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageCarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sideNavPanelLayout = new javax.swing.GroupLayout(sideNavPanel);
         sideNavPanel.setLayout(sideNavPanelLayout);
         sideNavPanelLayout.setHorizontalGroup(
             sideNavPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideNavPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(manageCategoriesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                .addGroup(sideNavPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(manageCategoriesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                    .addComponent(manageCarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
                 .addContainerGap())
         );
         sideNavPanelLayout.setVerticalGroup(
@@ -82,7 +93,9 @@ public class LayoutView extends javax.swing.JFrame {
             .addGroup(sideNavPanelLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(manageCategoriesButton)
-                .addContainerGap(446, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(manageCarButton)
+                .addContainerGap(407, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
@@ -135,6 +148,10 @@ public class LayoutView extends javax.swing.JFrame {
         loadCarCategoryPanel();
     }//GEN-LAST:event_manageCategoriesButtonActionPerformed
 
+    private void manageCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCarButtonActionPerformed
+      loadCarManage();
+    }//GEN-LAST:event_manageCarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,6 +192,7 @@ public class LayoutView extends javax.swing.JFrame {
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton manageCarButton;
     private javax.swing.JButton manageCategoriesButton;
     private javax.swing.JPanel sideNavPanel;
     // End of variables declaration//GEN-END:variables
@@ -188,4 +206,16 @@ public class LayoutView extends javax.swing.JFrame {
         bodyPanel.repaint();
         bodyPanel.revalidate();
     }
+
+    private void loadCarManage() {
+        bodyPanel.removeAll();
+        CarPanel carPanel = new CarPanel();
+
+        carPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(carPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+    
+    
 }
